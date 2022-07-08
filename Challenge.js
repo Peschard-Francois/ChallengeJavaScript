@@ -21,16 +21,50 @@
 // tips(40);
 // tips(430);
 
-//DONNEES TEST 1
-let additionValeur = 240;
-let resultat  = additionValeur >= 50 && additionValeur <= 300 ? console.log(`La note était de : ${additionValeur}, le pourboire de ${tip = (additionValeur * 15 / 100)} et la valeur total etait de ${tip + additionValeur}`) : console.log(`La note était de : ${additionValeur}, le pourboire de ${tip = (additionValeur * 20 / 100)} et la valeur total etait de ${tip + additionValeur}`);
-//DONNEES TEST 2
-let additionValeur2 = 40;
-let resultat2  = additionValeur2 >= 50 && additionValeur2 <= 300 ? console.log(`La note était de : ${additionValeur2}, le pourboire de ${tip2 = (additionValeur2 * 15 / 100)} et la valeur total etait de ${tip2 + additionValeur2}`) : console.log(`La note était de : ${additionValeur2}, le pourboire de ${tip2 = (additionValeur2 * 20 / 100)} et la valeur total etait de ${tip2 + additionValeur2}`);
-//DONNEES TEST 3
-let additionValeur3 = 430;
-let resultat3  = additionValeur3 >= 50 && additionValeur3 <= 300 ? console.log(`La note était de : ${additionValeur3}, le pourboire de ${tip3 = (additionValeur3 * 15 / 100)} et la valeur total etait de ${tip3 + additionValeur3}`) : console.log(`La note était de : ${additionValeur3}, le pourboire de ${tip3 = (additionValeur3 * 20 / 100)} et la valeur total etait de ${tip3 + additionValeur3}`);
+// //DONNEES TEST 1
+// let additionValeur = 240;
+// let resultat  = additionValeur >= 50 && additionValeur <= 300 ? console.log(`La note était de : ${additionValeur}, le pourboire de ${tip = (additionValeur * 15 / 100)} et la valeur total etait de ${tip + additionValeur}`) : console.log(`La note était de : ${additionValeur}, le pourboire de ${tip = (additionValeur * 20 / 100)} et la valeur total etait de ${tip + additionValeur}`);
+// //DONNEES TEST 2
+// let additionValeur2 = 40;
+// let resultat2  = additionValeur2 >= 50 && additionValeur2 <= 300 ? console.log(`La note était de : ${additionValeur2}, le pourboire de ${tip2 = (additionValeur2 * 15 / 100)} et la valeur total etait de ${tip2 + additionValeur2}`) : console.log(`La note était de : ${additionValeur2}, le pourboire de ${tip2 = (additionValeur2 * 20 / 100)} et la valeur total etait de ${tip2 + additionValeur2}`);
+// //DONNEES TEST 3
+// let additionValeur3 = 430;
+// let resultat3  = additionValeur3 >= 50 && additionValeur3 <= 300 ? console.log(`La note était de : ${additionValeur3}, le pourboire de ${tip3 = (additionValeur3 * 15 / 100)} et la valeur total etait de ${tip3 + additionValeur3}`) : console.log(`La note était de : ${additionValeur3}, le pourboire de ${tip3 = (additionValeur3 * 20 / 100)} et la valeur total etait de ${tip3 + additionValeur3}`);
 
 
+//                                        CHALLENGE 6
+
+function calcAverage(array) {
+    let i = 0;
+    let summ = 0 ;
+    while (i < array.length) {
+        summ += array[i++];
+}
+    return summ / array.length;
+};
+
+function checkWinner(moy1,moy2){
+
+    if (moy1 >= (moy2 * 2)){
+        let total = console.log(`L’équipe Dauphins gagne (${moy1} vs ${moy2})`);
+        return total;
+    }else if (moy2 >= (moy1 * 2)){
+        let total = console.log(`L’équipe Koala gagne (${moy2} vs ${moy1})`);
+        return total;
+    }else{
+        let total = console.log(`Personne ne gagne (${moy2} vs ${moy1}) !!`);
+        return total;
+    }
+};
+
+//DONNEE TEST 1
+let dauphins = [44, 23, 71];
+let koalas = [65, 54, 49];
+checkWinner(calcAverage(dauphins),calcAverage(koalas));
+
+//DONNEE TEST 1
+let dauphins2 = [85, 54, 41];
+let koalas2 = [23, 34, 27];
+checkWinner(calcAverage(dauphins2),calcAverage(koalas2));
 
 
