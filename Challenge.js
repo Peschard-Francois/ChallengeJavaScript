@@ -34,37 +34,76 @@
 
 //                                        CHALLENGE 6
 
-function calcAverage(array) {
-    let i = 0;
-    let summ = 0 ;
-    while (i < array.length) {
-        summ += array[i++];
-}
-    return summ / array.length;
-};
+// function calcAverage(array) {
+//     let i = 0;
+//     let summ = 0 ;
+//     while (i < array.length) {
+//         summ += array[i++];
+// }
+//     return summ / array.length;
+// };
 
-function checkWinner(moy1,moy2){
+// function checkWinner(moy1,moy2){
 
-    if (moy1 >= (moy2 * 2)){
-        let total = console.log(`L’équipe Dauphins gagne (${moy1} vs ${moy2})`);
-        return total;
-    }else if (moy2 >= (moy1 * 2)){
-        let total = console.log(`L’équipe Koala gagne (${moy2} vs ${moy1})`);
-        return total;
+//     if (moy1 >= (moy2 * 2)){
+//         let total = console.log(`L’équipe Dauphins gagne (${moy1} vs ${moy2})`);
+//         return total;
+//     }else if (moy2 >= (moy1 * 2)){
+//         let total = console.log(`L’équipe Koala gagne (${moy2} vs ${moy1})`);
+//         return total;
+//     }else{
+//         let total = console.log(`Personne ne gagne (${moy2} vs ${moy1}) !!`);
+//         return total;
+//     }
+// };
+
+// //DONNEE TEST 1
+// let dauphins = [44, 23, 71];
+// let koalas = [65, 54, 49];
+// checkWinner(calcAverage(dauphins),calcAverage(koalas));
+
+// //DONNEE TEST 1
+// let dauphins2 = [85, 54, 41];
+// let koalas2 = [23, 34, 27];
+// checkWinner(calcAverage(dauphins2),calcAverage(koalas2));
+
+
+//                                        CHALLENGE 7
+
+function cacltip(additionValeur,array,array2){
+    if ( additionValeur >= 50 && additionValeur <= 300){
+        const tipsValue = additionValeur * 15 / 100
+        const total = additionValeur + tipsValue
+        array.push(tipsValue);
+        array2.push(total);
+        message = console.log(`La note était de : ${additionValeur}, le pourboire de ${tipsValue} et la valeur total etait de ${total}`);
+        return message;
     }else{
-        let total = console.log(`Personne ne gagne (${moy2} vs ${moy1}) !!`);
-        return total;
+        const tipsValue = additionValeur * 20 / 100
+        const total = additionValeur + tipsValue
+        message = console.log(`La note était de : ${additionValeur}, le pourboire de ${tipsValue} et la valeur total etait de ${total}`);  
+        array.push(tipsValue);
+        array2.push(total);
+        return message;
     }
 };
+// TEST 100
+let tips = [];
+let totals = [];
+let bills = [125,555,44];
 
-//DONNEE TEST 1
-let dauphins = [44, 23, 71];
-let koalas = [65, 54, 49];
-checkWinner(calcAverage(dauphins),calcAverage(koalas));
+function billsUse(array){
+    for  (i = 0 ;i < array.length; i++) {
+        cacltip(array[i],tips,totals);
+    }
+    let tipsArray =  console.log(tips);
+    let totalArray =  console.log(totals);
+    return tipsArray + totalArray;
+};
 
-//DONNEE TEST 1
-let dauphins2 = [85, 54, 41];
-let koalas2 = [23, 34, 27];
-checkWinner(calcAverage(dauphins2),calcAverage(koalas2));
+billsUse(bills);
+
+
+
 
 
