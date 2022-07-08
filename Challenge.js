@@ -70,6 +70,47 @@
 
 //                                        CHALLENGE 7
 
+// function cacltip(additionValeur,array,array2){
+//     if ( additionValeur >= 50 && additionValeur <= 300){
+//         const tipsValue = additionValeur * 15 / 100
+//         const total = additionValeur + tipsValue
+//         array.push(tipsValue);
+//         array2.push(total);
+//         message = console.log(`La note était de : ${additionValeur}, le pourboire de ${tipsValue} et la valeur total etait de ${total}`);
+//         return message;
+//     }else{
+//         const tipsValue = additionValeur * 20 / 100
+//         const total = additionValeur + tipsValue
+//         message = console.log(`La note était de : ${additionValeur}, le pourboire de ${tipsValue} et la valeur total etait de ${total}`);  
+//         array.push(tipsValue);
+//         array2.push(total);
+//         return message;
+//     }
+// };
+// // TEST 100
+// let tips = [];
+// let totals = [];
+// let bills = [125,555,44];
+
+// function billsUse(array){
+//     for  (i = 0 ;i < array.length; i++) {
+//         cacltip(array[i],tips,totals);
+//     }
+//     let tipsArray =  console.log(tips);
+//     let totalArray =  console.log(totals);
+//     return tipsArray + totalArray;
+// };
+
+// billsUse(bills);
+
+
+
+//                                        CHALLENGE 8
+
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
 function cacltip(additionValeur,array,array2){
     if ( additionValeur >= 50 && additionValeur <= 300){
         const tipsValue = additionValeur * 15 / 100
@@ -87,10 +128,6 @@ function cacltip(additionValeur,array,array2){
         return message;
     }
 };
-// TEST 100
-let tips = [];
-let totals = [];
-let bills = [125,555,44];
 
 function billsUse(array){
     for  (i = 0 ;i < array.length; i++) {
@@ -100,10 +137,15 @@ function billsUse(array){
     let totalArray =  console.log(totals);
     return tipsArray + totalArray;
 };
-
 billsUse(bills);
 
-
-
-
-
+function calcAverage(array) {
+    let i = 0;
+    let summ = 0 ;
+    while (i < array.length) {
+        summ += array[i++];
+}
+    return summ / array.length;
+}
+console.log(calcAverage(tips));
+console.log(calcAverage(totals));
