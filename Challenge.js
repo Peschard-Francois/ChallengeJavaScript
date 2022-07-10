@@ -1,87 +1,66 @@
-//                                        CHALLENGE 10
+//                                        CHALLENGE 11
+const user = {
+    firstName: 'Bernard',
+    weight: 78,
+    size: 1.69,
+    calcBMI : function (){
+        return user.imc =  (user.weight / (user.size * user.size)).toFixed(2);
+    },
+    imc : ""
+   };
+   const user2 = {
+    firstName: 'Marcel',
+    weight: 92,
+    size: 1.95,
+    calcBMI : function (){
+        return user2.imc = (user2.weight / (user2.size * user2.size)).toFixed(2);
+    },
+    imc : ""
+   };
 
-// Here are our Astro signs provided as a string.
+user.calcBMI();
+console.log(user);
+user2.calcBMI();
+console.log(user2);
 
-const aries = `♈`,
-  taurus = `♉`,
-  gemini = `♊`,
-  cancer = `♋`,
-  leo = `♌`,
-  virgo = `♍`,
-  libra = `♎`,
-  scorpio = `♏`,
-  sagittarius = `♐`,
-  capricorn = `♑`,
-  aquarius = `♒`,
-  pisces = `♓︎`;
+if ( user.imc > user2.imc){
 
-// In Western Astrology there are 12 signs, organized by Earth Elements (Eart, Water, Air, Fire)  //
-// You are going to manipulate the following arrays along with this challenge:  //
+    console.log(`L’IMC de Bernard ${user.imc} est plus élevé que celui de Marcel ${user2.imc})`)
+}else{
 
-const fireSigns = [aries, leo];
-const earthSigns = [taurus, virgo, capricorn, sagittarius];
-const airSigns = [gemini, libra, aquarius];
-const waterSigns = [cancer, scorpio, pisces];
+    console.log(`L’IMC de Marcel ${user2.imc} est plus élevé que celui de Bernard ${user.imc})`)
+};
 
-/* –––––––––––––––––– */
+// DONNEES TEST 2
 
-/*  🏁 Add one final element to an array 
-    
-    Sagittarius is missing from fire signs please add it at the END of the array
-    and verify the result.
+const user3 = {
+    firstName: 'Bernard',
+    weight: 95,
+    size: 1.88,
+    calcBMI : function (){
+        return user3.imc =  (user3.weight / (user3.size * user3.size)).toFixed(2);
+    },
+    imc : ""
+   };
+   const user4 = {
+    firstName: 'Marcel',
+    weight: 85,
+    size: 1.76,
+    calcBMI : function (){
+        return user4.imc = (user4.weight / (user4.size * user4.size)).toFixed(2);
+    },
+    imc : ""
+   };
 
-*/
+user3.calcBMI();
+console.log(user3);
+user4.calcBMI();
+console.log(user4);
 
-// ✒️ Write your code here
+if ( user3.imc > user4.imc){
 
-fireSigns.push("♐");
+    console.log(`L’IMC de Bernard ${user3.imc} est plus élevé que celui de Marcel ${user4.imc})`)
+}else{
 
-
-
-console.log(
-  fireSigns[fireSigns.length - 1] === "♐"
-    ? "Good Answer ✅"
-    : "Wrong Answer ❌"
-);
-
-
-/* 🏁 Remove the last element of an array
-
-      Sagittarius should not be on earth Signs, please remove Sagittarius from the array, and verify
-      the result.
-*/
-
-// ✒️ Write your code here
-
-earthSigns.pop("♐");
-
-console.log(earthSigns[earthSigns.length - 1] !== "♐" ? "Good Answer ✅" : "Wrong Answer ❌");
-
-/* 
-    🏁  Initialize an empty array in javascript
-     Please initialize an empty array and store it in a let variable called zodiacSigns
-
- */
-//let zodiacSigns = null; // ✒️ Write your code here
-let test = [];
-
-
-
-/*  
-     🏁 🏁 Merge Fire, Earth, Water, and Air arrays into zodiacSigns (in that order), using the concat methods 
-*/
-
-// ✒️ Write your code here
-
-let zodiacSigns = test.concat(fireSigns,earthSigns,waterSigns,airSigns);
-
-console.log(
-  (zodiacSigns !== null && zodiacSigns.toString() === "♈,♌,♐,♉,♍,♑,♋,♏,♓︎,♊,♎,♒")
-    ? "Good Answer ✅"
-    : "Wrong Answer ❌"
-);
-/*  
-    🏁 Please print dynamically in console how many elements you have now in the zodiacSigns array
- */
-
-console.log(`There is ${zodiacSigns.length} signs in the zodiac`);
+    console.log(`L’IMC de Marcel ${user4.imc} est plus élevé que celui de Bernard ${user3.imc})`)
+};
