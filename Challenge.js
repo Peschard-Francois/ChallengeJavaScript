@@ -1,75 +1,173 @@
-//                                        CHALLENGE 12
+//                                        CHALLENGE 13
+const game = {
+    team1: 'Bayern Munich',
+    team2: 'Borrussia Dortmund',
+    players: [
+      [
+        'Neuer',
+        'Pavard',
+        'Martinez',
+        'Alaba',
+        'Davies',
+        'Kimmich',
+        'Goretzka',
+        'Coman',
+        'Muller',
+        'Gnarby',
+        'Lewandowski',
+      ],
+      [
+        'Burki',
+        'Schulz',
+        'Hummels',
+        'Akanji',
+        'Hakimi',
+        'Weigl',
+        'Witsel',
+        'Hazard',
+        'Brandt',
+        'Sancho',
+        'Gotze',
+      ],
+    ],
+    score: '4:0',
+    scored: ['Lewandowski', 'Gnarby', 'Lewandowski','Hummels'],
+    date: 'Nov 9th, 2037',
+    odds: {
+      team1: 1.33,
+      x: 3.25,
+      team2: 6.5,
+    },
+  };
 
+//  EXERCICE 1
+//1
+let players1 = game.players[0];
+    console.log(players1);
+let players2 = game.players[1];
+    console.log(players2);
 
+//2
+let gk = players1[0];
+    console.log(gk);
+let fieldPlayers = players1.slice(1);
+    console.log(fieldPlayers);
 
-const cards = document.querySelector(".cards");
+//3
+let allPlayers = players1.concat(players2);
+    console.log(allPlayers);
 
-const animalsToAdopt = [
-  {
-    name: "Lucky",
-    picture: "https://placekitten.com/200/287"
-  },
-  {
-    name: "Symba",
-    picture: "https://placekitten.com/200/139"
-  },
-  {
-    name: "Léo",
-    picture: "https://placekitten.com/200/90"
-  },
-  {
-    name: "Milo",
-    picture: "https://placekitten.com/200/194"
-  },
-  {
-    name: "Charly",
-    picture: "https://placekitten.com/200/179"
+//4
+let players1Final = players1.push( "Thiago" , "Coutinho" , "Perisic");
+    console.log(players1);
+
+//5
+let team1 = game.odds.team1;
+    console.log(team1);
+let draw = game.odds.x;
+    console.log(draw);
+let team2 = game.odds.team2;
+    console.log(team2);
+   
+//6
+function printGoals (array){
+  let resultat = "";
+  for ( i = 0 ; i < array.length ; i++){
+    resultat =  resultat + "\n"  + array[i] ;
   }
-];
+   return `Liste des joueurs qui ont marqués : \n ${resultat} \n Le nombres de but est de : ${array.length}`;
+};
+console.log(printGoals(game.scored));
 
-function createCard(title, imageUrl) {
-  const card = document.createElement("div");
-  card.classList.add("card");
-  cards.appendChild(card);
+//7
+if ( game.odds.team1 > game.odds.team2){
+  console.log(`${game.team2} aura plus de chance de gagner que ${game.team1} `)
+}else{
+  console.log(`${game.team1} aura plus de chance de gagner que ${game.team2} `)
+};
 
-  const cardHeader = document.createElement("div");
-  cardHeader.classList.add("card-header");
-  card.appendChild(cardHeader);
+//  EXERCICE 2
 
-  const cardImg = document.createElement("div");
-  cardImg.style.backgroundImage = `url(${imageUrl})`;
-  cardImg.classList.add("card-img");
-  cardHeader.appendChild(cardImg);
+//1
+let j = 1;
+for ( let player of game.scored){
+  console.log(`But n°${j} : ${player}`);
+  j++
+};
 
-  // Step1: Create the cardBody div, add the class card-body and add it to the card
-  const cardBody = document.createElement("div");
-  cardBody.classList.add("card-body");
-  card.appendChild(cardBody);
-
-  // Step2: Create the cardTitle h2, add the class card-title,
-  // set the text inside the tag to the "title" parameter of this function
-  // and add it to the cardBody
-  const cardTitle = document.createElement("h2");
-  cardTitle.classList.add("card-title");
-  cardTitle.innerHTML = `${title}`
-  cardBody.appendChild(cardTitle);  
-
-
-
-
-  // Step3: Create the cardButton button, add the class card-button,
-  // set the text inside the tag to be "Adopt Now"
-  // and add it to the cardBody
-  const cardButton = document.createElement("button");
-  cardButton.classList.add("card-button");
-  cardButton.innerHTML = "Adopt Now";
-  cardBody.appendChild(cardButton);
+//2
+const probaValeur = Object.values(game.odds);
+console.log(probaValeur);
+let resultat ="";
+for ( moy in probaValeur){
+  resultat = resultat + moy;
+  
 }
+console.log(resultat / probaValeur.length)
 
-/* Step 4: Create a for loop, for each element of the array, 
- call the function createCard with the corresponding parameter */
 
- for (i = 0 ; i < animalsToAdopt.length ; i++){
-    createCard(animalsToAdopt[i].name,animalsToAdopt[i].picture);
-    
- }
+//3
+ console.log(` Probabilité de victoire pour ${game.team1} : ${game.odds.team1} \n
+ Probabilité d’égalité : ${game.odds.x} \n
+ Probabilité de victoire de ${game.team2} : ${game.odds.team2}`) 
+
+
+//4
+const scorers = {
+    Gnarby: 1,
+    Hummels: 1,
+    Lewandowski: 2
+};
+
+//  EXERCICE 3
+
+//1
+const gameEvents = [
+  [17, "⚽ GOAL"],
+  [36, "🔁 Substitution"],
+  [47, "⚽ GOAL"],
+  [61, "🔁 Substitution"],
+  [64, "🟨 Yellow card"],
+  [69, "🟥 Red card"],
+  [70, "🔁 Substitution"],
+  [72, "🔁 Substitution"],
+  [76, "⚽ GOAL"],
+  [80, "⚽ GOAL"],
+  [92, "🟨 Yellow card"],
+];
+//Récuperation des nom évenements ( sans les minutes )
+const eventName = [];
+for(let i = 0 ; i < gameEvents.length ; i++){
+  eventName.push(gameEvents[i][1]);
+}
+//Parcours le tablezu evenName et vérifie s'il existe ou pas ( si apparait pour la prèmiere fois il initialise à 1 sinon incrémentation de 1 car il existe deja )
+const dictEvents = {};
+for (let event of eventName){
+  dictEvents[event] ? dictEvents[event]++ : dictEvents[event] = 1;
+}
+console.log(dictEvents);
+
+//2
+let deleteYellowCard = gameEvents.splice(4,1);
+console.log(gameEvents);
+
+//3
+console.log(`Un événement est appartu en moyenne toutes les ${90 / (gameEvents.length)} minutes`)
+
+//4
+for (let i = 0 ; i < gameEvents.length ; i++ ){
+    let events = gameEvents[i];
+    if(events[0] < 45){
+      console.log(`[PREMIÈRE MOITIÉ] ${events[0]} . ${events[1]}`);
+    }else{
+      console.log(`[DEUXIÈME MOITIÉ] ${events[0]} . ${events[1]}`);
+    }
+};
+
+
+
+
+
+
+
+
