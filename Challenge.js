@@ -12,5 +12,5 @@ let a = 1, b = 1;
 
 let c = ++a; // ? Answers 2 On renvoie la valeur apres l'incrémentation 1 + 1 = 2
 
-let d = b++; // ? Answers 1 On renvoie la valeur avant l'inecrémentation
+let d = b++; // ? Answers 1 On renvoie la valeur avant l'incrémentation
 
