@@ -26,34 +26,28 @@ let tailleMarcel2 = 1.76;
 
 function imc (poids , taille){
     return poids / (taille * taille);
-
 }
+
 //Données Test 1
 let bernardHigerIMC = imc(poidBernard,tailleBernard) > imc(poidMarcel,tailleMarcel);
 console.log(bernardHigerIMC);
-let test1B  = imc(poidBernard,tailleBernard);
-let test1M = imc(poidMarcel,tailleMarcel);
+let bernardTest1  = imc(poidBernard,tailleBernard);
+let marcelTest1 = imc(poidMarcel,tailleMarcel);
 //Données Test 2
 let bernardHigerIMC2 = imc(poidBernard2,tailleBernard2) > imc(poidMarcel2,tailleMarcel2);
 console.log(bernardHigerIMC2);
-let test2B = imc(poidBernard2,tailleBernard2);
-let test2M = imc(poidMarcel2,tailleMarcel2);
-
+let bernardTest2 = imc(poidBernard2,tailleBernard2);
+let marcelTest2 = imc(poidMarcel2,tailleMarcel2);
 
 //EXERCICE 2
-
-if(test1B > test1M){
-
-    console.log(`Bernard a un IMC plus élevé que Marcel (${test1B})`);
+if(bernardTest1 > marcelTest1){
+    console.log(`Bernard a un IMC plus élevé que Marcel (${bernardTest1})`);
 }else {
-    console.log(`Bernard a un IMC inferieur a Marcel (${test1B})`)
+    console.log(`Bernard a un IMC inferieur a Marcel (${bernardTest1})`)
 };
 
 //EXERCICE 3
-
-
 function imcEtat ( name , imc ){
-
     if ( imc < 21 ){
         console.log(`${name} : Insuffisance pondérale `)
     }else if ( imc >= 21 && imc <= 26 ){
@@ -65,13 +59,12 @@ function imcEtat ( name , imc ){
     }else{
         console.log(`${name} : Obésité importante `)
     }
-
 };
 //Données Test 1
-imcEtat("Bernard",test1B);
-imcEtat("Marcel",test1M);
+imcEtat("Bernard",bernardTest1);
+imcEtat("Marcel",marcelTest1);
 
 //Données Test 2
-imcEtat("Bernard",test2B);
-imcEtat("Marcel",test2M);
+imcEtat("Bernard",bernardTest2);
+imcEtat("Marcel",marcelTest2);
 
